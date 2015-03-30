@@ -2,6 +2,8 @@ USE codeup_test_db;
 
 -- mysql -u codeup -p -t < filename.sql
 
+TRUNCATE TABLE albums;
+
 INSERT INTO albums (artist_is, name_of_album, release_year,
 sales_total, genre)
 VALUES ('Michael Jackson', 'Thriller', '1982', '42.4', 'pop'),
