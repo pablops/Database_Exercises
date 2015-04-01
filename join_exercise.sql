@@ -17,7 +17,16 @@ ON de.emp_no = t.emp_no
 WHERE de.dept_no = 'd009' AND de.to_date = '9999-01-01' AND t.to_date = '9999-01-01'
 GROUP BY title;
 
-
+SELECT concat (d.dept_name, '|', e.first_name, ' ', e.last_name, '|', ' ', s.salary) 
+FROM salaries AS s
+JOIN dept_manager AS dm
+ON s.emp_no = dm.emp_no
+JOIN employees AS e 
+ON e.emp_no = dm.emp_no
+JOIN departments AS d
+ON dm.dept_no = d.dept_no
+WHERE  s.to_date = '9999-01-01' AND dm.to_date = '9999-01-01'
+/* GROUP BY ; */
 
 /* JOIN employees AS e
 ON 
